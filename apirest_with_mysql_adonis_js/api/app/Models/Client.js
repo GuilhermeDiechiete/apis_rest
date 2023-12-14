@@ -3,6 +3,11 @@
 const Model = use('Model')
 
 class Client extends Model {
+
+  static get connection() {
+    return 'oldMysql'
+  }
+  
   user () {
     return this.belongsTo('App/Models/User')
   }

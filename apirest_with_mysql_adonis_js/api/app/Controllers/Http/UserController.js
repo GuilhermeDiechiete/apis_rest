@@ -8,7 +8,7 @@ class UserController {
   }
   async show({ params }) {
     const user = await User.findOrFail(params.id)
-    await user.load('typeUser') // atualiza o typeUser no relacionamento
+    await user.loadMany(['typeUser', 'permissions', 'roles']) // atualiza o typeUser no relacionamento
     return user
   }
   async store({ request }) {

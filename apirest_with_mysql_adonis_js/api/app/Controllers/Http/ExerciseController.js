@@ -3,7 +3,8 @@
 const Exercise = use('App/Models/Exercise')
 
 class ExerciseController {
-  async index() {
+  async index({ request }) {
+    console.log(request.all())
     return await Exercise.all()
   }
   async show({ params }) {
@@ -12,6 +13,7 @@ class ExerciseController {
   }
   async store({ request }) {
     const data = request.only(['name', 'observation', 'series', 'waiting_time'])
+    console.log(request.input('action_by'))
     const exercise = await Exercise.create(data)
     return exercise
   }

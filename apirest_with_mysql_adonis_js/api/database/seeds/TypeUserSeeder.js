@@ -1,7 +1,5 @@
 'use strict'
 
-
-/** @type {import('@adonisjs/lucid/src/Factory')} */
 const Database = use('Database')
 
 class TypeUserSeeder {
